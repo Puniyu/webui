@@ -1,8 +1,4 @@
-ignoredBuiltDependencies:
-  - esbuild
-
 onlyBuiltDependencies:
   - '@parcel/watcher'
-  - '@swc/core'
   - '@tailwindcss/oxide'
-  - core-js
+  - esbuild

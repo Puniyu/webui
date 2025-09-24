@@ -1,9 +1,9 @@
-import { createRoot } from 'react-dom/client';
-import { Main } from './main';
-import './index.css'
+import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
+import { createRoot } from 'react-dom/client'
+import { App } from '@/app'
 
-
-const container = document.querySelector('#root') as Element;
-const root = createRoot(container);
-
-root.render(<Main />);
+createRoot(document.getElementById('root')!).render(
+    <ChakraProvider value={defaultSystem}>
+            <App />
+    </ChakraProvider>,
+)

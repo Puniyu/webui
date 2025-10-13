@@ -14,6 +14,7 @@ import axios from "axios";
 import logo from "@/assets/logo.png";
 import { APP_NAME } from "@/common";
 import { ColorModeButton } from "@/components/ui/color-mode";
+import { Typewriter } from "@/components/typewriter";
 
 // TODO:
 // - 更换一言接口为自有接口
@@ -98,50 +99,5 @@ export default function Login() {
 				</Box>
 			</motion.div>
 		</Box>
-	);
-}
-
-/**
- * 打字机效果组件
- */
-function Typewriter({
-	text,
-	typingSpeed,
-}: {
-	text: string;
-	typingSpeed: number;
-}) {
-	const [displayText, setDisplayText] = useState("");
-	const [currentIndex, setCurrentIndex] = useState(0);
-
-	useEffect(() => {
-		setDisplayText("");
-		setCurrentIndex(0);
-	}, [text]);
-
-	useEffect(() => {
-		if (currentIndex < text.length) {
-			const timeout = setTimeout(() => {
-				setDisplayText((prevText) => prevText + text[currentIndex]);
-				setCurrentIndex((prevIndex) => prevIndex + 1);
-			}, typingSpeed);
-
-			return () => clearTimeout(timeout);
-		}
-	}, [currentIndex, text, typingSpeed]);
-
-	return (
-		<Text className={"text-center text-blue-300"} mt={6}>
-			{displayText}
-			{currentIndex < text.length && (
-				<motion.span
-					animate={{ opacity: [1, 0] }}
-					transition={{ duration: 0.5, repeat: Infinity }}
-					style={{ display: "inline-block" }}
-				>
-					|
-				</motion.span>
-			)}
-		</Text>
 	);
 }

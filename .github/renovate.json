@@ -1,16 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>puniyu/github-action//.github/renovate"],
+  "extends": [
+    "github>puniyu/github-action//.github/renovate"
+  ],
   "packageRules": [
     {
       "groupName": "puniyu webui packages",
-      "matchManagers": ["pnpm"],
+      "matchManagers": [
+        "pnpm"
+      ],
       "rangeStrategy": "auto",
-      "schedule": ["at any time"],
+      "schedule": [
+        "at any time"
+      ],
       "labels": [
         "dependencies"
       ],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "pr"
     }
   ]
 }

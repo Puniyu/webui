@@ -7,6 +7,7 @@ import type { ThemeProviderProps } from "next-themes";
 import * as React from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
 import { Tooltip } from "@/components/ui/tooltip";
+import { motion } from "motion/react";
 
 export interface ColorModeProviderProps extends ThemeProviderProps {}
 
@@ -59,7 +60,14 @@ export const ColorModeButton = React.forwardRef<
 		colorMode === "dark" ? "切换到浅色模式" : "切换到深色模式";
 
 	return (
-		<ClientOnly fallback={<Skeleton boxSize="9" />}>
+		<motion.div
+		whileHover={{
+			scale: 1.1
+		}}
+		whileTap={{ scale: 0.9 }}
+		transition={{ type: "spring", stiffness: 300 }}
+	>
+		<ClientOnly fallback=<Skeleton boxSize="9" />>
 			<Tooltip content={tooltipLabel}>
 				<IconButton
 					onClick={toggleColorMode}
@@ -79,6 +87,7 @@ export const ColorModeButton = React.forwardRef<
 				</IconButton>
 			</Tooltip>
 		</ClientOnly>
+		</motion.div>
 	);
 });
 

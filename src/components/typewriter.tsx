@@ -29,7 +29,7 @@ export const Typewriter = ({
 	}, [currentIndex, text, typingSpeed]);
 
 	return (
-		<Text className={"text-center text-blue-300"} mt={6}>
+		<Text className="text-center text-blue-400" mt={6}>
 			{displayText}
 			{currentIndex < text.length && (
 				<motion.span

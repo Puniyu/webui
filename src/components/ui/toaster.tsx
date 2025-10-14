@@ -14,6 +14,7 @@ export const toaster = createToaster({
   pauseOnPageIdle: true,
 })
 
+// oxlint-disable-next-line arrow-body-style
 export const Toaster = () => {
   return (
     <Portal>

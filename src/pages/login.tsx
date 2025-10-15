@@ -61,10 +61,11 @@ export default function Login() {
 						className="!p-7"
 						borderWidth={1}
 						borderRadius="lg"
-						width={{ base: "90%", md: "400px" }}
+						width={{ base: "90%", md: "sm" }}
+						height={{ base: "90%", md: "md" }}
 						boxShadow="2xl"
 						backdropFilter="blur(10px)"
-						backgroundColor={{ base: "white", _dark: "black" }}
+						backgroundColor={{ base: "white", _dark: "gray.800" }}
 						opacity={0.95}
 						margin="auto"
 						position="relative"

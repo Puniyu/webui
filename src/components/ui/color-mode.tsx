@@ -9,7 +9,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 import { Tooltip } from "@/components/ui/tooltip";
 import { motion } from "motion/react";
 
-export interface ColorModeProviderProps extends ThemeProviderProps {}
+export interface ColorModeProviderProps extends ThemeProviderProps { }
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
 	return (
@@ -48,7 +48,7 @@ export function ColorModeIcon() {
 	return colorMode === "dark" ? <LuMoon /> : <LuSun />;
 }
 
-interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {}
+interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> { }
 
 export const ColorModeButton = React.forwardRef<
 	HTMLButtonElement,
@@ -61,32 +61,32 @@ export const ColorModeButton = React.forwardRef<
 
 	return (
 		<motion.div
-		whileHover={{
-			scale: 1.1
-		}}
-		whileTap={{ scale: 0.9 }}
-		transition={{ type: "spring", stiffness: 300 }}
-	>
-		<ClientOnly fallback=<Skeleton boxSize="9" />>
-			<Tooltip content={tooltipLabel}>
-				<IconButton
-					onClick={toggleColorMode}
-					variant="ghost"
-					aria-label="Toggle color mode"
-					size="sm"
-					ref={ref}
-					{...props}
-					css={{
-						_icon: {
-							width: "5",
-							height: "5",
-						},
-					}}
-				>
-					<ColorModeIcon />
-				</IconButton>
-			</Tooltip>
-		</ClientOnly>
+			whileHover={{
+				scale: 1.1
+			}}
+			whileTap={{ scale: 0.9 }}
+			transition={{ type: "spring", stiffness: 300 }}
+		>
+			<ClientOnly fallback={<Skeleton boxSize="9" />}>
+				<Tooltip content={tooltipLabel}>
+					<IconButton
+						onClick={toggleColorMode}
+						variant="ghost"
+						aria-label="Toggle color mode"
+						size="sm"
+						ref={ref}
+						{...props}
+						css={{
+							_icon: {
+								width: "5",
+								height: "5",
+							},
+						}}
+					>
+						<ColorModeIcon />
+					</IconButton>
+				</Tooltip>
+			</ClientOnly>
 		</motion.div>
 	);
 });

@@ -111,7 +111,6 @@
     "unicorn/no-useless-spread": "warn",
     "unicorn/prefer-set-size": "warn",
     "unicorn/prefer-string-starts-ends-with": "warn",
-
     "arrow-body-style": ["error", "as-needed"],
     "curly": ["error", "multi"]
   },

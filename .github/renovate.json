@@ -6,18 +6,14 @@
   "packageRules": [
     {
       "groupName": "puniyu webui packages",
-      "matchManagers": [
-        "pnpm"
-      ],
+      "matchManagers": ["pnpm"],
       "rangeStrategy": "auto",
       "schedule": [
         "at any time"
       ],
       "labels": [
         "dependencies"
-      ],
-      "automerge": true,
-      "automergeType": "pr"
+      ]
     }
   ]
 }

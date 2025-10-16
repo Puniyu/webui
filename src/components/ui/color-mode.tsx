@@ -13,7 +13,13 @@ export interface ColorModeProviderProps extends ThemeProviderProps { }
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
 	return (
-		<ThemeProvider attribute="class" disableTransitionOnChange {...props} />
+		<ThemeProvider
+			attribute="class"
+			defaultTheme="system"
+			enableSystem={true}
+			disableTransitionOnChange
+			{...props}
+		/>
 	);
 }
 
@@ -73,15 +79,14 @@ export const ColorModeButton = React.forwardRef<
 						onClick={toggleColorMode}
 						variant="ghost"
 						aria-label="Toggle color mode"
-						size="sm"
+						size="md"
 						ref={ref}
 						{...props}
-						css={{
-							_icon: {
-								width: "5",
-								height: "5",
-							},
+						_hover={{
+							backgroundColor: { base: "gray.200", _dark: "gray.500" }
 						}}
+
+
 					>
 						<ColorModeIcon />
 					</IconButton>

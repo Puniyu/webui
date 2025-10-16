@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>puniyu/github-action//.github/renovate"
+    "github>puniyu/.github//.github/renovate"
   ],
   "packageRules": [
     {

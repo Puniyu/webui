@@ -39,11 +39,7 @@ export default function Login() {
 
 	return (
 		<Box
-			className="w-full h-screen"
-			display="flex"
-			_dark={{ bg: "black" }}
-			alignItems="center"
-			justifyContent="center"
+			className="w-full h-screen flex justify-center items-center bg-white dark:bg-black"
 		>
 			<Box>
 
@@ -58,21 +54,13 @@ export default function Login() {
 					}}
 				>
 					<Box
-						className="!p-7"
-						borderWidth={1}
-						borderRadius="lg"
-						width={{ base: "90%", md: "sm" }}
-						height={{ base: "90%", md: "md" }}
-						boxShadow="2xl"
+						className="!p-7  w-9/10 h-9/10 md:w-md md:h-2/4 shadow-xl/20 m-auto bg-white dark:bg-black border rounded-2xl relative"
 						backdropFilter="blur(10px)"
-						backgroundColor={{ base: "white", _dark: "gray.800" }}
 						opacity={0.95}
-						margin="auto"
-						position="relative"
 					>
 
 						{/* 暗黑模式切换按钮 */}
-						<Box position="absolute" top={4} right={4}>
+						<Box className="absolute top-4 right-4" >
 							<ColorModeButton />
 						</Box>
 
@@ -95,22 +83,23 @@ export default function Login() {
 							>
 								<Image
 									src={logo}
-									className="!size-28 rounded-[50%]"
+									className="!size-28"
+									rounded={"50%"}
 								/>
 							</motion.div>
 						</Box>
 
 
-						<Heading as="h1" textAlign="center" mb={2} color={{ base: "purple.400", _dark: "white" }} >
+						<Heading as="h1" className="text-center mt-2 text-purple-400 dark:text-white" >
 							PuniYu
 						</Heading>
 
-						<Text textAlign="center" mb={6} color="gray.500">
+						<Text className="text-center mt-6 text-gray-500">
 							欢迎回来, 请输入您的访问令牌以继续
 						</Text>
 
 						<Text className="text-pink-400">访问令牌</Text>
-						<InputGroup startElement={<IoKeyOutline />} marginTop="5px">
+						<InputGroup startElement={<IoKeyOutline />} className="mt-1">
 							<Input
 								colorPalette="pink"
 								placeholder="输入您的令牌..."
@@ -122,14 +111,12 @@ export default function Login() {
 							initial={{ x: -100, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.5, delay: 0.2 }}
-							whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+							whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
 							className="w-full !mt-5"
 						>
 							<Button
-								className="w-full !bg-gradient-to-r from-pink-300 to-orange-600 mt-10 hover:from-pink-400 hover:to-orange-700"
+								className="w-full !bg-gradient-to-r from-pink-300 to-orange-600 mt-10 hover:from-pink-400 hover:to-orange-700 shadow-md rounded-lg"
 								border="none"
-								boxShadow="sm"
-								borderRadius="1rem"
 							>
 								登录
 							</Button>

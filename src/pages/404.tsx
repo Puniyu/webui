@@ -17,35 +17,29 @@ export default function NotFound() {
   const imageUrl = "https://t.alcy.cc/moez"
 
   return (
-    <Box className="w-full h-screen flex" alignItems="center" justifyContent="center">
+    <Box className="w-full h-screen flex justify-center items-center">
       {/* 文本区域 */}
       <Box
-        className="rounded-lg flex flex-col relative !pt-5"
-        width={{ base: "90%", md: "md" }}
-        height={{ base: "90%", md: "lg" }}
-        boxShadow="2xl"
-        alignItems="center"
-        justifyContent="center"
-        backgroundColor={{ base: "white", _dark: "gray.800" }}
+        className="rounded-lg flex flex-col relative !pt-5 justify-center items-center w-9/10 h-9/10 md:w-md md:h-2/4 shadow-2xl bg-white dark:bg-gray-800"
       >
         <Box>
           <Text className="!text-3xl text-purple-500">页面找不到了</Text>
         </Box>
 
-        <Box className="!pt-5" width={"90%"}>
-          <Image src={imageUrl} borderRadius="md" />
+        <Box className="!pt-5 w-9/10">
+          <Image src={imageUrl} className="rounded-md" />
         </Box>
 
         {/* 暗黑模式切换按钮 */}
-        <Box position="absolute" top={4} right={4}>
+        <Box className="absolute top-4 right-4">
           <ColorModeButton />
         </Box>
 
         {/* 一言 */}
-        <Box className="bottom-5 text-center px-4" width="full">
+        <Box className="bottom-5 text-center px-4 w-full">
           <Typewriter text={yiyan || "加载中..."} typingSpeed={100} />
         </Box>
-        
+
       </Box>
     </Box>
   )
